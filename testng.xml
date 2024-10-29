@@ -1,0 +1,17 @@
+<suite name="Suite">
+
+    <listeners>
+        <listener class-name="Listeners"/>
+    </listeners>
+
+    <test name="Test" thread-cunt="5">
+        <classes>
+            <class name="Demo">
+<!--                <methods>-->
+<!--                    <include name="fillingLoginForm"/>-->
+<!--                    <include name="addProductToCart"/>-->
+<!--                </methods>-->
+            </class>
+        </classes>
+    </test>
+</suite>

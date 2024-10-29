@@ -37,7 +37,7 @@ public class Baseclass extends AppiumUtils {
 //                .withIPAddress(ipAddress).usingPort(port).build();
 //        service.start();
 
-        fis = new FileInputStream("/home/nimit@simform.dom/IdeaProjects/AppiumFrameworkDesign/global.properties");
+        fis = new FileInputStream(System.getProperty("user.dir") + "/global.properties");
         prop.load(fis);
 
         service = startAppiumServer(prop.getProperty("ipAddress"), Integer.parseInt(prop.getProperty("port")));
@@ -45,7 +45,7 @@ public class Baseclass extends AppiumUtils {
         UiAutomator2Options options = new UiAutomator2Options();
 //        options.setDeviceName("Pixel 8 Pro API 35");
         options.setDeviceName(prop.getProperty("androidDeviceName"));
-        options.setApp("/home/nimit@simform.dom/IdeaProjects/AppiumApps/APKFiles/General-Store.apk");
+        options.setApp(System.getProperty("user.dir") + "/apk/General-Store.apk");
 
         driver = new AndroidDriver(new URI("http://127.0.0.1:4723").toURL(),options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
